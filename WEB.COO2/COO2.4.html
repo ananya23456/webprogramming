@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>JavaScript Event Handling Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s ease;
+            margin-top: 100px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Event Handling: Change Background Color</h1>
+    <p>Click the button below to change the background color of this page.</p>
+
+    <button id="colorButton">Change Color</button>
+
+    <script>
+      
+        const btn = document.getElementById("colorButton");
+
+  
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+      
+        btn.addEventListener("click", function() {
+            const newColor = getRandomColor();
+            document.body.style.backgroundColor = newColor;
+        });
+    </script>
+
+</body>
+</html>
+

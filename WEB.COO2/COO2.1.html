@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>String and Math Functions in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f8f9fa;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        pre {
+            background: #eef2f3;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .result {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Predefined Functions in String and Math Objects</h1>
+
+    <h2>String Object Functions</h2>
+    <p>The <b>String object</b> in JavaScript provides many built-in methods for working with text.</p>
+
+    <div class="result" id="stringResults"></div>
+
+    <h2>Math Object Functions</h2>
+    <p>The <b>Math object</b> provides mathematical constants and functions that can be used without creating a Math object.</p>
+
+    <div class="result" id="mathResults"></div>
+
+    <script>
+   
+        let text = "JavaScript Functions";
+        let stringOutput = "";
+
+        stringOutput += "<b>Original String:</b> " + text + "<br><br>";
+        stringOutput += "Length: " + text.length + "<br>";
+        stringOutput += "Uppercase: " + text.toUpperCase() + "<br>";
+        stringOutput += "Lowercase: " + text.toLowerCase() + "<br>";
+        stringOutput += "Character at index 4: " + text.charAt(4) + "<br>";
+        stringOutput += "Substring (0, 10): " + text.substring(0, 10) + "<br>";
+        stringOutput += "Replace 'Functions' with 'Methods': " + text.replace("Functions", "Methods") + "<br>";
+        stringOutput += "Index of 'Script': " + text.indexOf("Script") + "<br>";
+        stringOutput += "Split by space: " + text.split(" ") + "<br>";
+
+        document.getElementById("stringResults").innerHTML = stringOutput;
+
+
+
+        let mathOutput = "";
+
+        mathOutput += "Value of PI: " + Math.PI + "<br>";
+        mathOutput += "Square root of 16: " + Math.sqrt(16) + "<br>";
+        mathOutput += "2 raised to 3: " + Math.pow(2, 3) + "<br>";
+        mathOutput += "Absolute value of -7: " + Math.abs(-7) + "<br>";
+        mathOutput += "Ceil of 4.2: " + Math.ceil(4.2) + "<br>";
+        mathOutput += "Floor of 4.8: " + Math.floor(4.8) + "<br>";
+        mathOutput += "Round of 4.6: " + Math.round(4.6) + "<br>";
+        mathOutput += "Random number between 0 and 1: " + Math.random().toFixed(3) + "<br>";
+        mathOutput += "Maximum of (4, 8, 2, 10): " + Math.max(4, 8, 2, 10) + "<br>";
+        mathOutput += "Minimum of (4, 8, 2, 10): " + Math.min(4, 8, 2, 10) + "<br>";
+
+        document.getElementById("mathResults").innerHTML = mathOutput;
+    </script>
+
+</body>
+</html>
+

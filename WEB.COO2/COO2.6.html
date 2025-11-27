@@ -1,0 +1,140 @@
+<html>
+<head>
+    <title>Online Exam using JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .quiz-container {
+            background: #fff;
+            width: 600px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            color: #34495e;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Online Exam</h1>
+
+    <div class="quiz-container">
+        <form id="examForm">
+            <div class="question">
+                <h3>1. What does HTML stand for?</h3>
+                <label><input type="radio" name="q1" value="a">Hyper Text Markup Language</label><br>
+                <label><input type="radio" name="q1" value="b">High Transfer Machine Language</label><br>
+                <label><input type="radio" name="q1" value="c">Home Tool Markup Language</label>
+            </div>
+
+            <div class="question">
+                <h3>2. Which of the following is a JavaScript data type?</h3>
+                <label><input type="radio" name="q2" value="a">Document</label><br>
+                <label><input type="radio" name="q2" value="b">Number</label><br>
+                <label><input type="radio" name="q2" value="c">Link</label>
+            </div>
+
+            <div class="question">
+                <h3>3. Which symbol is used for comments in JavaScript?</h3>
+                <label><input type="radio" name="q3" value="a">//</label><br>
+                <label><input type="radio" name="q3" value="b">#</label><br>
+                <label><input type="radio" name="q3" value="c">--</label>
+            </div>
+
+            <div class="question">
+                <h3>4. Which HTML tag is used to include JavaScript code?</h3>
+                <label><input type="radio" name="q4" value="a">&lt;js&gt;</label><br>
+                <label><input type="radio" name="q4" value="b">&lt;script&gt;</label><br>
+                <label><input type="radio" name="q4" value="c">&lt;javascript&gt;</label>
+            </div>
+
+            <div class="question">
+                <h3>5. Which function is used to print output in the browser console?</h3>
+                <label><input type="radio" name="q5" value="a">print()</label><br>
+                <label><input type="radio" name="q5" value="b">console.log()</label><br>
+                <label><input type="radio" name="q5" value="c">document.write()</label>
+            </div>
+
+            <button type="button" onclick="checkAnswers()">Submit Exam</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            let total = 5;
+
+            // Correct answers
+            let answers = {
+                q1: "a",
+                q2: "b",
+                q3: "a",
+                q4: "b",
+                q5: "b"
+            };
+
+
+            for (let i = 1; i <= total; i++) {
+                let q = document.forms["examForm"]["q" + i].value;
+                if (q === answers["q" + i]) {
+                    score++;
+                }
+            }
+
+     
+            let result = document.getElementById("result");
+            result.innerHTML = "Your Score: " + score + " / " + total;
+
+            if (score === total) {
+                result.style.color = "green";
+                alert("Excellent! You got all answers correct!");
+            } else if (score >= 3) {
+                result.style.color = "orange";
+                alert("Good job! You scored " + score + " out of " + total);
+            } else {
+                result.style.color = "red";
+                alert("Try again! You scored " + score + " out of " + total);
+            }
+        }
+    </script>
+
+</body>
+</html>
